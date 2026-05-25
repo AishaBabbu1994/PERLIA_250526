@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🧸 ExplicaFácil — Explica como si tuvieras 5 años</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Partículas flotantes de fondo -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="logo">
+        <span class="logo-emoji">🧸</span>
+        <span class="logo-text">ExplicaFácil</span>
+        <span class="logo-emoji">✨</span>
+      </div>
+      <p class="tagline">🌟 Escribe cualquier tema complejo y te lo explicamos como si tuvieras 5 años 🌟</p>
+      <button class="theme-toggle" id="themeToggle" title="Cambiar tema">🌙</button>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="main">
+    <!-- Sección de configuración -->
+    <section class="card config-card" id="configSection">
+      <h2>🔧 Configuración</h2>
+      <div class="input-group">
+        <label for="apiKeyInput">🔑 Tu API Key (Groq)</label>
+        <input type="password" id="apiKeyInput" placeholder="gsk_..." autocomplete="off">
+        <small>🔒 Se guarda solo en tu navegador (localStorage)</small>
+      </div>
+      <div class="input-group">
+        <label for="levelSelect">📊 Nivel de explicación</label>
+        <select id="levelSelect">
+          <option value="ELI5">🧸 ELI5 — Como si tuvieras 5 años</option>
+          <option value="ELI10">🎒 ELI10 — Como si tuvieras 10 años</option>
+          <option value="ELI15">🎮 ELI15 — Como si tuvieras 15 años</option>
+          <option value="ELINA">👔 ELINA — Adulto simple</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Sección de entrada -->
+    <section class="card input-card" id="inputSection">
+      <h2>📝 ¿Qué tema quieres entender?</h2>
+      <div class="input-group">
+        <label for="topicInput">✏️ Escribe tu tema</label>
+        <textarea id="topicInput" rows="3" placeholder="Ej: ¿Qué es la inteligencia artificial? ¿Cómo funciona el internet? ¿Qué son los agujeros negros?"></textarea>
+      </div>
+      <div class="input-group">
+        <label for="contextInput">💭 Contexto adicional (opcional)</label>
+        <input type="text" id="contextInput" placeholder="Ej: Me interesa para un proyecto escolar...">
+      </div>
+      <button class="btn btn-primary" id="explainBtn">
+        <span class="btn-text">🚀 ¡Explícame!</span>
+        <span class="btn-loader" id="btnLoader"></span>
+      </button>
+    </section>
+
+    <!-- Estado de carga -->
+    <section class="card loading-card hidden" id="loadingSection">
+      <div class="spinner"></div>
+      <p class="loading-text">🧠 Pensando en la mejor analogía...</p>
+      <p class="loading-sub">✨ Convirtiendo palabras difíciles en cosas simples...</p>
+    </section>
+
+    <!-- Resultado -->
+    <section class="card result-card hidden" id="resultSection">
+      <div class="result-header">
+        <h2>🎉 ¡Aquí tienes tu explicación!</h2>
+        <div class="result-actions">
+          <button class="btn btn-secondary" id="copyBtn">📋 Copiar</button>
+          <button class="btn btn-secondary" id="downloadBtn">💾 Descargar</button>
+          <button class="btn btn-secondary" id="newBtn">🔄 Nuevo tema</button>
+        </div>
+      </div>
+      <div class="result-content" id="resultContent"></div>
+      <div class="score-section hidden" id="scoreSection">
+        <div class="score-circle" id="scoreCircle">
+          <span class="score-value" id="scoreValue">0</span>
+          <span class="score-label">⭐</span>
+        </div>
+        <p class="score-text" id="scoreText"></p>
+      </div>
+    </section>
+
+    <!-- Historial -->
+    <section class="card history-card" id="historySection">
+      <h2>📚 Temas explicados recientemente</h2>
+      <div class="history-list" id="historyList">
+        <p class="empty-history">🌱 Aún no has explicado ningún tema. ¡Empieza arriba!</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>🧸 ExplicaFácil — Hecho con 💜 para curiosos de todas las edades</p>
+    <p class="footer-sub">🌙 Modo oscuro · 🌞 Modo claro · 🔒 Tu API key nunca sale de tu navegador</p>
+  </footer>
+
+  <!-- Toast container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Confetti container -->
+  <div class="confetti-container" id="confettiContainer"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

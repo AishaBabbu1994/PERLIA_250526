@@ -1,0 +1,9 @@
+{
+  "app_name": "ExplicaFácil",
+  "app_emoji": "🧸",
+  "api_model": "llama-3.3-70b-versatile",
+  "temperature": 0.8,
+  "max_tokens": 4000,
+  "parametros_especificos": "Explicador ELI5 con analogías divertidas",
+  "theme": "dark"
+}
